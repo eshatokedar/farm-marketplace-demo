@@ -22,7 +22,7 @@ const Home = () => {
       <div className="banner">
         <div className="banner-content">
           <h1>Welcome to the Farm Marketplace</h1>
-          <p>Find the freshest produce directly from local farmers</p>
+          <p>This app connects farmers directly with buyers for seamless transactions. Farmers list and manage products effortlessly, while buyers access fresh produce at competitive prices. Experience a simpler, transparent marketplace.</p>
           <div className="banner-search-bar">
             <input type="text" placeholder="Search for fresh produce..." />
             <button>Search</button>
