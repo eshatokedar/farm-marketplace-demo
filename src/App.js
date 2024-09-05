@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Login from './pages/Login';
-// import Order from './pages/Order';
+import Order from './pages/Order';
 import Profile from './pages/Profile';
 // import ContactUs from './pages/ContactUs';
 // import Footer from './components/Footer';
@@ -20,7 +20,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/login-farmer" element={<Login userType="Farmer" />} />
             <Route path="/login-buyer" element={<Login userType="Buyer" />} />
-            {/* <Route path="/order" element={<Order />} /> */}
+            <Route path="/order" element={<Order />} />
             <Route path="/profile" element={<Profile />} />
             {/* <Route path="/contact-us" element={<ContactUs />} /> */}
           </Routes>
@@ -32,6 +32,4 @@ const App = () => {
 };
 
 export default App;
-
-
 

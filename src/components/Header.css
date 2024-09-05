@@ -3,80 +3,64 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  background-color: #4CAF50;
+  padding: 20px 40px; /* Increased padding to make the header wider */
+  background: linear-gradient(90deg, #2E8B57, #3CB371, #66CDAA, #8FBC8F); /* Shades of green */
   color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.logo a {
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif; /* Added custom font */
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px; /* Increased gap between links */
+}
+
+.nav-links a {
+  color: white;
   text-decoration: none;
-  font-size: 24px;
-  color: white;
+  font-size: 18px;
+  padding: 10px 15px;
+  transition: background-color 0.3s, border-radius 0.3s; /* Smooth transition for hover effect */
+  border-radius: 5px; /* Slight rounded corners */
 }
 
-.search-bar input {
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Hover effect with translucent background */
+  border-radius: 20px; /* Rounded corners on hover */
+}
+
+.logout-button {
+  background: none;
+  border: 2px solid white;
   padding: 10px 20px;
-  border-radius: 30px;
-  border: none;
-  outline: none;
-  font-size: 14px;
-  width: 250px;
-}
-
-.hamburger-menu {
-  position: relative;
-}
-
-#menu-toggle {
-  display: none;
-}
-
-.menu-icon {
-  display: block;
-  width: 30px;
-  height: 22px;
-  position: relative;
-  cursor: pointer;
-}
-
-.menu-icon span {
-  display: block;
-  width: 100%;
-  height: 4px;
-  background-color: white;
-  margin: 4px 0;
-}
-
-.menu {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 40px;
-  background-color: #4CAF50;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-#menu-toggle:checked + .menu-icon + .menu {
-  display: block;
-}
-
-.menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.menu ul li {
-  padding: 12px;
-  text-align: right;
-}
-
-.menu ul li a {
   color: white;
-  text-decoration: none;
-  display: block;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 5px;
+  transition: background-color 0.3s, border-radius 0.3s;
 }
 
-  
+.logout-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+  }
+}
+

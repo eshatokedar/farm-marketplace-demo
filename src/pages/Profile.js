@@ -1,6 +1,9 @@
+// src/pages/Profile.js
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import FarmerDashboard from './FarmerDashboard';
+import BuyerDashboard from './BuyerDashboard';
 import './Profile.css';
 
 const Profile = () => {
@@ -24,23 +27,16 @@ const Profile = () => {
     <div className="profile-page">
       <h1>{user.type} Profile</h1>
       <p>Email: {user.email}</p>
+
       {user.type === 'Farmer' ? (
-        <div>
-          <h2>Manage Your Products</h2>
-          <p>List and manage your farm products here.</p>
-          {/* Add more farmer-specific functionality */}
-        </div>
+        <FarmerDashboard />
       ) : (
-        <div>
-          <h2>Buyer Dashboard</h2>
-          <p>View your orders and browse products.</p>
-          {/* Add more buyer-specific functionality */}
-        </div>
+        <BuyerDashboard />
       )}
+
       <button onClick={handleLogout}>Logout</button>
     </div>
   );
 };
 
 export default Profile;
-

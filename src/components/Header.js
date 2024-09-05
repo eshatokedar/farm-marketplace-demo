@@ -1,45 +1,37 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+// src/components/Header.js
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './Header.css';
+import { AuthContext } from '../context/AuthContext';
 
 const Header = () => {
-  const { user } = useAuth();
+  const { user, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout(); // Call the logout function from context
+    navigate('/login'); // Redirect to login page after logout
+  };
 
   return (
     <header className="header">
-      <div className="logo">
-        <Link to="/">Farm Marketplace</Link>
-      </div>
-      <div className="search-bar">
-        <input type="text" placeholder="Search for products..." />
-      </div>
-      <div className="hamburger-menu">
-        <input type="checkbox" id="menu-toggle" />
-        <label htmlFor="menu-toggle" className="menu-icon">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-        <nav className="menu">
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/order">Order</Link></li>
-            <li><Link to="/profile">Profile</Link></li>
-            <li><Link to="/contact-us">Contact Us</Link></li>
-            {user ? (
-              <li><Link to="/profile">Logout</Link></li>
-            ) : (
-              <>
-                <li><Link to="/login-farmer">Farmer Login</Link></li>
-                <li><Link to="/login-buyer">Buyer Login</Link></li>
-              </>
-            )}
-          </ul>
-        </nav>
-      </div>
+      <div className="logo">Farmers Market</div>
+      <nav className="nav-links">
+        <Link to="/">Home</Link>
+        <Link to="/profile">Profile</Link>
+        <Link to="/contact-us">Contact Us</Link>
+        <Link to="/order">Orders</Link>
+        <Link to="/login-farmer">Farmer's Login</Link>
+        <Link to="/login-buyer">Buyer's Login</Link>
+        {user && (
+          <button onClick={handleLogout} className="logout-button">
+            Log Out
+          </button>
+        )}
+      </nav>
     </header>
   );
 };
 
 export default Header;
+
