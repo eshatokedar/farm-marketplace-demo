@@ -4,7 +4,7 @@ import ProductCard from '../components/ProductCard';
 import './Home.css';
 import dragonfruitImage from '../assets/dragonfruit.jpg';
 import kiwiImage from '../assets/kiwi.jpg';
-import litchiImage from '../assets/litchi.jpg';
+import litchiImage from '../assets/litchi-3.jpg';
 import mangoImage from '../assets/mango.jpg';
 import makhanaImage from '../assets/makhana.jpg';
 
